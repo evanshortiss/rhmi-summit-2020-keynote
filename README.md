@@ -42,13 +42,13 @@ oc login $CLUSTER_URL
 ```
 
 After the setup script has run you'll still have a couple of manual steps to
-complete.
+complete. These are covered in the two sections that follow:
 
 ### Import the Fuse Online Integration
 
-1. Open your Fuse Online instance on the cluster.
+1. Open the Fuse Online instance on the cluster.
 1. Choose *Integrations* from the side menu.
-1. Click th *Import* button.
+1. Click the *Import* button.
 1. Drag and Drop the ZIP file in this folder into the import upload area.
 1. Navigate to the *Connections* screen in Fuse Online.
 1. Update the *FTP* connection details with your FTP hostname, user, and password.
@@ -63,14 +63,14 @@ complete.
 1. Paste in the contents of this [code-ready/devfile.yml](/code-ready/devfile.yml).
 1. Create the workspace.
 
-## Operating the Demo
+## Showcasing the Demo
 
 1. Open the Quarkus CodeReady Workspace.
 1. From the command palette on the right choose "run".
 1. Wait for the application to start.
 1. When prompted with notifications about ports available:
     * Dismiss the port 5005 notification.
-    * Click "open" on the port 8080 notification.
+    * Open the URL when prompted by the port 8080 notification.
 
-The Transactions UI will be displayed and table rows should be populated
-dynamically.
+Marvel at the Transactions UI that's displayed and table rows being populated
+dynamically with data from the FTP server that's routed through Kafka.
