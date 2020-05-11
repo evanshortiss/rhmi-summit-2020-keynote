@@ -6,6 +6,6 @@ metadata:
 spec:
   channel: stable
   name: strimzi-kafka-operator
-  source: community-operators
+  source: SOURCE_NAME
   sourceNamespace: openshift-marketplace
 
