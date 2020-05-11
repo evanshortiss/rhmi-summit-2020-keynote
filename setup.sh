@@ -19,7 +19,7 @@ sleep 2
 
 # generate the subscription using the correct source (differs in OCP vs. OSD)
 KAFKA_PROVDER=$(oc get packagemanifests/strimzi-kafka-operator -n openshift-marketplace -o jsonpath={.metadata.labels.opsrc-owner-name})
-sed 's/SOURCE_NAME/community-operators/g' ./amq-streams/operator.subscription.yml > /tmp/operator.subscription.yml
+sed "s/SOURCE_NAME/$KAFKA_PROVDER/g" ./amq-streams/operator.subscription.yml > /tmp/operator.subscription.yml
 
 oc apply -f amq-streams/operator.group.yml -n $PROJECT_NAME
 oc apply -f /tmp/operator.subscription.yml -n $PROJECT_NAME # note the/tmp file is used
