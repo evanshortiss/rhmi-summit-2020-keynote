@@ -1,0 +1,45 @@
+metadata:
+    name: quarkus-wsp
+  projects:
+    - name: transaction-viewer
+      source:
+        location: 'git@github.com:evanshortiss/rhmi-summit-2020-quarkus-kafka'
+        type: git
+        branch: master
+  components:
+    - id: redhat/java8/latest
+      type: chePlugin
+    - type: chePlugin
+      reference: >-
+        https://raw.githubusercontent.com/eclipse/che-plugin-registry/master/v3/plugins/ms-vscode/vscode-github-pullrequest/0.8.0/meta.yaml
+      alias: ms-vscode
+    - mountSources: true
+      endpoints:
+        - name: 8080/tcp
+          port: 8080
+        - name: 5005/tcp
+          port: 5005
+      memoryLimit: 4096Mi
+      type: dockerimage
+      volumes:
+        - name: m2
+          containerPath: /home/jboss/.m2
+      alias: quarkus-tools
+      image: >-
+        quay.io/openshiftlabs/cloudnative-workspaces-quarkus:1.5
+      env:
+        - value: /home/jboss/.m2
+          name: MAVEN_CONFIG
+        - value: >-
+            -Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G
+            -XX:+CMSClassUnloadingEnabled
+          name: MAVEN_OPTS
+  apiVersion: 1.0.0
+  commands:
+    - name: run
+      actions:
+        - workdir: '${CHE_PROJECTS_ROOT}'
+          type: exec
+          command: 'mvn clean compile quarkus:dev -f transaction-viewer/'
+          component: quarkus-tools
+  

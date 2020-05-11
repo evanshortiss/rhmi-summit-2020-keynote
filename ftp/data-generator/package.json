@@ -1,0 +1,21 @@
+{
+  "name": "summit-2020-data-generator",
+  "version": "1.0.0",
+  "description": "Generates XML files that can be dumped into an FTP directory.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node index.js",
+    "start:dev": "NODE_ENV=development node index.js",
+    "deploy": "nodeshift"
+  },
+  "keywords": [],
+  "author": "Evan Shortiss",
+  "license": "MIT",
+  "dependencies": {
+    "barelog": "~0.2.0",
+    "env-var": "~6.0.4",
+    "faker": "~4.1.0",
+    "handlebars": "~4.7.3",
+    "uuid": "~7.0.2"
+  }
+}

@@ -1,0 +1,9 @@
+apiVersion: kafka.strimzi.io/v1alpha1
+kind: KafkaTopic
+metadata:
+  name: transactions
+  labels:
+    strimzi.io/cluster: keynote-rhmi-demo-cluster
+spec:
+  partitions: 10
+  replicas: 2
