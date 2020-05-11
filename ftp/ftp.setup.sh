@@ -45,5 +45,5 @@ cd "$SCRIPT_PARENT/data-generator/"
 npm install
 forever start -c "npm run start" ./
 
-echo "\nConnect via ftp://$(curl https://whatsmyip.dev/api/ip)"
+echo "\nConnect via ftp://$(curl https://whatsmyip.dev/api/ip | jq -r '.addr')"
 echo "Use the username/password ftp-user/$PASSWORD"

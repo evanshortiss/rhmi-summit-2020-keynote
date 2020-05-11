@@ -1,7 +1,9 @@
 # FTP Setup
 
 This folder contains a data generator written in Node.js, and instructions to
-easily setup an FTP server on a VPS such as DigitalOcean.
+easily setup an FTP server on a VPS.
+
+_NOTE: This setup script is not intended for use as a production ready configuration. Also, it has only been tested and verified on a Fedora 31 VPS from DigitalOcean for demo purposes._
 
 ## VPS FTP Server Setup
 
@@ -14,13 +16,17 @@ git clone https://github.com/evanshortiss/rhmi-summit-2020-keynote
 
 cd rhmi-summit-2020-keynote
 
-./ftp-setup/ftp.setup.sh
+./ftp/ftp.setup.sh
 ```
 
-Note that an FTP username and password will be provided by the script. Take
-note of these since you'll need them!
+Note that an FTP connection details are written to stdout by the script once it
+is finished. Take note of these since you'll need them!
 
-## Verify FTP from macOS via Finder
+## Connect to the FTP Service
+
+You can connect to the FTP service using your preferred client.
+
+### Using macOS via Finder
 
 1. Open Finder
 1. Select *Go > Connect to Server* from the top menu bar
@@ -28,4 +34,4 @@ note of these since you'll need them!
 1. Select *Registered User* when prompted:
     1. Enter `ftp-user` as the username
     1. Enter the FTP user password
-1. You should be successfully connected and be able to browse files in `/home/ftp-user` on the remote server
+1. You should be connected and able to browse files in the `/home/ftp-user` directory on the VPS
