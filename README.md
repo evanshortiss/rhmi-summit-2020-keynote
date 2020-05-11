@@ -49,7 +49,7 @@ complete. These are covered in the two sections that follow:
 1. Open the Fuse Online instance on the cluster.
 1. Choose *Integrations* from the side menu.
 1. Click the *Import* button.
-1. Drag and Drop the ZIP file in this folder into the import upload area.
+1. Drag and Drop the ZIP file in the [fuse-online/ folder](/fuse-online) into the import upload area.
 1. Navigate to the *Connections* screen in Fuse Online.
 1. Update the *FTP* connection details with your FTP hostname, user, and password.
 1. Return to the *Integrations* screen and edit and publish the FTP integration.
