@@ -21,8 +21,8 @@ included below for reference.
 
 ## Prerequisites
 
-* OpenShift 4.2+ Cluster (or OpenShift Dedicated 4.2+)
-* Red Hat Managed Integration (aka [Integreatly](https://github.com/integr8ly/integreatly-operator/)) (installed on the cluster)
+* OpenShift or OpenShift Dedicated 4.2+ Cluster
+* Red Hat Managed Integration (aka [Integreatly](https://github.com/integr8ly/integreatly-operator/)) installed on the cluster
 
 ## Setup
 
